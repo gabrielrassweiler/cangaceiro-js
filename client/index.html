@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 
-<head>
+<head>    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">    
-    <title>Negociações</title>    
+    <title>Negociações</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/bootstrap-theme.css">
 
@@ -56,20 +56,7 @@
     <script src="app/ui/views/NegociacoesView.js"></script> 
     <script src="app/ui/models/Mensagem.js"></script>
     <script src="app/ui/views/MensagemView.js"></script>
-    <script src="app/app.js"></script>
-
-    <script>
-        const negociacoes = new	Proxy(new Negociacoes(),
-        	{
-                set(target, prop, receiver){
-                    console.log(`${prop} guarda ${target[prop]} , recebera ${value}`); 
-            
-                    return Reflect.set(target, prop, value);
-            }
-        });
-        console.log(negociacao.quantidade);	
-        console.log(negociacao.valor);  
-    </script>
+    <script src="app/app.js"></script> 
 </body>
 
 </html>
