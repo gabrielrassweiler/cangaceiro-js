@@ -20,6 +20,25 @@ class NegociacaoController {
         );
     }
 
+    importaNegociacoes(){
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', 'negociacoes/semana');
+
+        xhr.onreadystatechange = () => {
+            if(xhr.readyState == 4){
+                if (xhr.status == 200){
+                    console.log('obtendo as negociacoes do servidor');
+                    console.log(xhr.responseText);
+                } else {
+                    console.log(xhr.responseText);
+                    console.log('nao foi possivel obter as negociacoes da semana');
+                    this._mensagem.texto = 'nao foi possivel obter as negociacoes da semana';
+                }
+            }    
+        }
+        xhr.send();
+    }
+
     adiciona(event) {
 
         try {
